@@ -3,6 +3,8 @@
 # Configure the Azure Provider
 terraform {
   required_version = ">= 1.1.7, < 2.0.0"
+  backend "azurerm" { 
+  }
   required_providers {
     azurerm = {
       version = "~>3.47.0"
@@ -17,8 +19,6 @@ terraform {
 
 provider "azurerm" {
   features {
-    backend "azurerm" { 
-    }
     key_vault {
       purge_soft_delete_on_destroy = false
     }
